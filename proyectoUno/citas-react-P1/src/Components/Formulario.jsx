@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-const Formulario = () => {
+const Formulario = ({pacientes, setPacientes}) => {
   const [nombre, setNombre] = useState('');
   const [propietario, setPropietario] = useState('');
   const [email, setEmail] = useState('');
@@ -11,7 +11,25 @@ const Formulario = () => {
     e.preventDefault();
 
     if(![nombre, propietario, email, fecha, sintomas].includes("")){
-      console.log("Enviando formulario");
+      //console.log("Enviando formulario");
+
+      //objeto pacientes 
+      const objPacientes = {
+        nombre, 
+        propietario, 
+        email, 
+        fecha, 
+        sintomas
+      }
+
+      setPacientes([...pacientes, objPacientes]);
+
+      setNombre('');
+      setPropietario('');
+      setEmail('');
+      setFecha('');
+      setSintomas('');
+
     }else{
       console.log("Hay al menos un campo sin completar!!!");
     }
