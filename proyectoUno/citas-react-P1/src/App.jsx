@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import Header from './Components/Header';
 import Formulario from './Components/Formulario';
 import ListadoPacientes from './Components/ListadoPacientes';
