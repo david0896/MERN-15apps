@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Error from './Error';
 
 const Formulario = ({ pacientes, setPacientes }) => {
   const [nombre, setNombre] = useState('');
@@ -31,7 +32,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
       setEmail('');
       setFecha('');
       setSintomas('');
-      
+
       setError(false);
     } else {
       console.log("Hay al menos un campo sin completar!!!");
@@ -52,11 +53,11 @@ const Formulario = ({ pacientes, setPacientes }) => {
         className="bg-white shadow-md rounded-md p-5 my-10"
         onSubmit={handleSubmit}
       >
-        {error && (
-          <div className='bg-red-800 text-white text-center p-3 uppercase font-bold mb-3 round-mb'>
-            <p>Todos los campos son obligatorios</p>
-          </div>
-        )}
+        {error && <Error>
+          <p>
+            Todos los campos son obligatorio
+          </p>
+        </Error>}
         <div className="mb-5">
           <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">Nombre Mascota</label>
           <input
