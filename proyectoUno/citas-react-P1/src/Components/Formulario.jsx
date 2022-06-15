@@ -51,8 +51,10 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
     if(paciente.id){
       //editando registro
       objPacientes.id = paciente.id;
-      const pacientesActualizados = pacientes.map(item => item.id === paciente.id ? objPacientes : item)
-      setPacientes(pacientesActualizados)
+      const pacientesActualizados = pacientes.map(item => item.id === paciente.id ? objPacientes : item);
+      setPacientes(pacientesActualizados);
+      setPaciente({});
+
     }else{
       //agregando nuevo registro
       objPacientes.id = generarId();
@@ -65,7 +67,6 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
     setEmail('');
     setFecha('');
     setSintomas('');
-    setPaciente({});
 
   }
 
