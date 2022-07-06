@@ -330,7 +330,7 @@ main {
     width: 5rem;
 }
 .nuevo-gasto img:hover {
-    cursor: pointer;
+    cursor: default;
 }
 
 .modal {
