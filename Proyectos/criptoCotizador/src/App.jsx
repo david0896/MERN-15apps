@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import Formulario from './components/Formulario'
 import styled from '@emotion/styled'
 import ImagenCripto from './img/imagen-criptos.png'
 
@@ -29,7 +29,7 @@ const Heading = styled.h1`
   margin-bottom: 50px;
   font-size: 34px;
 
-  &::after{
+  &:after{
     content: '';
     width: 100px;
     height: 6px;
@@ -49,6 +49,7 @@ function App() {
         />
         <div>
             <Heading>Cotiza Criptomonedas al Instante</Heading>
+            <Formulario/>
         </div>
       </Contenedor>
   )
