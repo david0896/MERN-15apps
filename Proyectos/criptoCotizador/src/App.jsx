@@ -29,7 +29,7 @@ const Heading = styled.h1`
   margin-bottom: 50px;
   font-size: 34px;
 
-  &:after{
+  &::after{
     content: '';
     width: 100px;
     height: 6px;
