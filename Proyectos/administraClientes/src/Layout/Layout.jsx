@@ -18,7 +18,7 @@ const Layout = () => {
                         to="/Clientes/Nuevo">Nuevo Cliente</Link>
                 </nav>
             </div>
-            <div className='md:w-3/4 p-10 bg-gray-100'>
+            <div className='md:w-3/4 p-10 bg-gray-100 md:h-screen overflow-y-scroll'>
                 <Outlet/>
             </div>        
         </div>
