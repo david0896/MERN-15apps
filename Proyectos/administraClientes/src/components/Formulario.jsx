@@ -1,8 +1,12 @@
 import {Formik, Form, Field, ErrorMessage} from 'formik'
+import {useNavigate} from 'react-router-dom'
 import * as Yup from 'yup'
 import Alerta from './Alerta'
 
 const Formulario = () => {
+
+    //* redireccionar 
+    const navigate = useNavigate()
 
     //* validaciones de formulario con YUP
     const nuevoClienteSchema = Yup.object().shape({
@@ -22,9 +26,28 @@ const Formulario = () => {
                      .positive('No se acepta numeros negativos'),
     })
 
-    const handleSubmit = values =>(
-        console.log(values)
-    )
+    const handleSubmit = async (values) =>{
+        try {
+            const url = 'http://localhost:4000/clientes';
+            const confPetition = {
+                method: 'POST',
+                body: JSON.stringify(values),
+                headers: {
+                    'Content-Type': 'application/json' 
+                }
+            }
+            const respuesta = await fetch(url, confPetition);
+            console.log(respuesta)
+
+            const resultado = await respuesta.json();
+            console.log(resultado)
+
+            navigate('/clientes')
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
 
     return (
@@ -44,7 +67,10 @@ const Formulario = () => {
                     notas:'',
                 }}
 
-                onSubmit={values => {handleSubmit(values)}}
+                onSubmit={async (values, {resetForm}) => {
+                    await handleSubmit(values);
+                    resetForm();
+                }}
                 validationSchema={nuevoClienteSchema}
             >
                 {({errors, touched})=>{

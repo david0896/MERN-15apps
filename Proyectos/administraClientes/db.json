@@ -1,0 +1,48 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "David"
+    },
+    {
+      "nombre": "Alfredo",
+      "empresa": "Chursh inc",
+      "email": "alfredo@chursh.com",
+      "telefono": "04142343455",
+      "notas": "Cliente requiere actualización de stock de productos ",
+      "id": 2
+    },
+    {
+      "nombre": "Daniel",
+      "empresa": "blur inc",
+      "email": "ad45@blur.com",
+      "telefono": "0414876876",
+      "notas": "Cliente requiere envio de token",
+      "id": 3
+    },
+    {
+      "nombre": "luz",
+      "empresa": "lhyf inc",
+      "email": "hjg@ghkj.com",
+      "telefono": "675875",
+      "notas": "Nuevo ingreso",
+      "id": 4
+    },
+    {
+      "nombre": "karen ",
+      "empresa": "karen inc ",
+      "email": "karen@karen.com",
+      "telefono": "325345435",
+      "notas": "Petición de tonner ",
+      "id": 5
+    },
+    {
+      "nombre": "Alberto",
+      "empresa": "Al inc",
+      "email": "alb34@gmail.com",
+      "telefono": "34235552",
+      "notas": "",
+      "id": 6
+    }
+  ]
+}
