@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import * as Yup from 'yup'
 import Alerta from './Alerta'
 
-const Formulario = () => {
+const Formulario = ({cliente}) => {
 
     //* redireccionar 
     const navigate = useNavigate()
@@ -56,16 +56,19 @@ const Formulario = () => {
         >
             <h1
                 className=' text-gray-600 font-bold text-xl uppercase text-center'
-            >Agregar cliente</h1>
+            >{cliente?.nombre ? 'Editar cliente' : 'Agregar cliente'}</h1>
 
             <Formik
                 initialValues={{
-                    nombre:'',
-                    empresa:'',
-                    email:'',
-                    telefono:'',
-                    notas:'',
+                    //nombre:'',
+                    nombre: cliente?.nombre ?? '', //* evalua que la propiedad del objeto exista y si no devuelve undefined, lo que devuelva es evaluedo por ?? para colocar "" en caso de no existir ninguna propiedad seteada
+                    empresa: cliente?.empresa ?? '',
+                    email: cliente?.email ?? '',
+                    telefono: cliente?.telefono ?? '',
+                    notas: cliente?.notas ?? '',
                 }}
+
+                enableReinitialize= {true} //*prop utilizado para poder releer valores iniciales
 
                 onSubmit={async (values, {resetForm}) => {
                     await handleSubmit(values);
@@ -163,7 +166,7 @@ const Formulario = () => {
                             </div>
                             <input 
                                 type="submit" 
-                                value="Agregar cliente" 
+                                value={cliente?.nombre ? 'Editar cliente' : 'Agregar cliente'} 
                                 className=' mt-5 bg-blue-800 w-full p-3 text-white font-bold uppercase text-lg'
                             />
                         </Form>
@@ -172,6 +175,10 @@ const Formulario = () => {
             </Formik>
         </div>
     )
+}
+
+Formulario.defaultProps= {
+    cliente: {}
 }
 
 export default Formulario
