@@ -17,18 +17,12 @@
       "id": 2
     },
     {
-      "id": 4,
-      "nombre": "Miguel",
-      "telefono": 319381983,
+      "nombre": "Miguel brozass",
+      "empresa": "Codigo Con Juan",
       "email": "miguel@juan.com",
-      "empresa": "Codigo Con Juan"
-    },
-    {
-      "id": 5,
-      "nombre": "Pedro",
-      "telefono": 1398198938,
-      "email": "pedro@juan.com",
-      "empresa": "Codigo Con Juan"
+      "telefono": "319381983",
+      "notas": "nuevo gerente de ventas",
+      "id": 4
     },
     {
       "nombre": "Juan Desde React",
